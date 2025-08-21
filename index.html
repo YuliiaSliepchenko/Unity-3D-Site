@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItEnAi - Курс Unity 3D для дітей 9-18 років</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span>IT</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ItEnAi</h1>
+                        <p>IT School</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#about" class="nav-link">Про курс</a>
+                    <a href="#modules" class="nav-link">Модулі</a>
+                    <a href="#benefits" class="nav-link">Переваги</a>
+                    <a href="#pricing" class="nav-link">Ціни</a>
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Записатися</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="#about" class="nav-link" onclick="closeMobileMenu()">Про курс</a>
+                <a href="#modules" class="nav-link" onclick="closeMobileMenu()">Модулі</a>
+                <a href="#benefits" class="nav-link" onclick="closeMobileMenu()">Переваги</a>
+                <a href="#pricing" class="nav-link" onclick="closeMobileMenu()">Ціни</a>
+                <button class="btn btn-primary" onclick="scrollToSection('contact'); closeMobileMenu()">Записатися</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <span class="star-icon">⭐</span>
+                        Один із популярніших курсів з IT школи
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Unity 3D — від гравця до розробника  
+                        <span class="gradient-text">власних ігор</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Ваша дитина грає в ігри? Нехай навчиться їх створювати! Курс для дітей 9-18 років від школи ItEnAi.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Модулі</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Уроки</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">9-18</div>
+                            <div class="stat-label">Років</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToSection('contact')">
+                            Записатися на курс
+                        </button>
+                        <button class="btn btn-outline btn-large">
+                            ▶ Дивитися відео
+                        </button>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="social-proof">
+                        <div class="avatars">
+                            <div class="avatar">1</div>
+                            <div class="avatar">2</div>
+                            <div class="avatar">3</div>
+                            <div class="avatar">4</div>
+                        </div>
+                        <div class="social-text">
+                            <div class="social-number">220+ учнів</div>
+                            <div class="social-label">вже навчаються з нами</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <img src="./images/adaptive/unity 3d.png" alt="Unity 3D">
+                        <div class="floating-element floating-3d">IT</div>
+                        <div class="floating-element floating-users">👥</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Про курс <span class="gradient-text">Unity 3D</span></h2>
+                <p> Курс Unity 3D допоможе дитині зробити перші кроки у світ геймдеву: від знайомства з інтерфейсом рушія та основами програмування на C# — до створення власних ігор різних жанрів. Учні навчаться працювати з 3D-об’єктами, анімаціями та інтерфейсами, створювати ігрових персонажів і цілі світи. Завершується курс презентацією власного проєкту.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🖥</div>
+                    <h3>Unity 3D від А до Я</h3>
+                    <p>Знайомство з інтерфейсом та основними можливостями рушія.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Програмування на C#</h3>
+                    <p>Синтаксис, змінні, умови та цикли.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Алгоритми в іграх</h3>
+                    <p>Як працюють обчислення та логіка в ігрових процесах.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Матеріали та 3D-моделі</h3>
+                    <p>Створення текстур, робота з об’єктами у просторі.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕹</div>
+                    <h3>Керовані персонажі</h3>
+                    <p>Додавання управління, фізики та взаємодії з оточенням.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎞</div>
+                    <h3>Анімація</h3>
+                    <p>Оживлення героїв, рухів і об’єктів у грі.</p>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-left">
+                    <h3>Що дає курс вашій дитині?</h3>
+                    <ul class="benefits-list">
+                        <li><span class="check">✓</span>Алгоритмічне й просторове мислення, креативність.</li>
+                        <li><span class="check">✓</span>Практичні навички кодування та розуміння роботи алгоритмів.</li>
+                        <li><span class="check">✓</span>Робота з матеріалами, текстурами та об’єктами у просторі.</li>
+                        <li><span class="check">✓</span>Від простих рівнів до повноцінних ігрових проєктів.</li>
+                        <li><span class="check">✓</span>Оживлення персонажів, створення інтерфейсів і меню.</li>
+                        <li><span class="check">✓</span>Знайомство з GameDev і IT-професіями, перші кроки у кар’єрі.</li>
+                    </ul>
+                </div>
+                <div class="about-right">
+                    <img src="./images/adaptive/Unity 3d1.png" alt="Діти навчаються Unity 3D">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules">
+        <div class="container">
+            <div class="section-header">
+                <h2>Програма <span class="gradient-text">навчання</span></h2>
+                <p>4 модулі, 24 уроки - Навчання, яке приносить результат і реальні проєкти</p>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Module 1 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-1">1</div>
+                        <div class="module-info">
+                            <h3>Модуль 1. Основи Unity та програмування</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Знайомство з інтерфейсом Unity 3D</div>
+                        <div class="topic">✓ Базові інструменти рушія</div>
+                        <div class="topic">✓ Програмування на C#: змінні, умови, цикли</div>
+                        <div class="topic">✓ Алгоритми та обчислення в іграх</div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-2">2</div>
+                        <div class="module-info">
+                            <h3>Модуль 2. Створення ігрових світів</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Робота з 3D-об’єктами, матеріалами та текстурами</div>
+                        <div class="topic">✓ Анімації персонажів і об’єктів</div>
+                        <div class="topic">✓ Створення керованих героїв та елементів управління</div>
+                        <div class="topic">✓ Проєкти: Будинок мрії, Маріо-пригода</div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-3">3</div>
+                        <div class="module-info">
+                            <h3>Модуль 3. Жанри та механіки</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Гоночні ігри та налаштування транспорту</div>
+                        <div class="topic">✓ Бойові арени та багатокористувацькі битви</div>
+                        <div class="topic">✓ Логічні та пригодницькі ігри</div>
+                        <div class="topic">✓ Проєкти: Швидкісні перегони, Бойова арена, Магічна головоломка</div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-4">4</div>
+                        <div class="module-info">
+                            <h3>Модуль 4. Складні проєкти та фінал</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Шутери від першої та третьої особи</div>
+                        <div class="topic">✓ Космічні битви та бонусні механіки</div>
+                        <div class="topic">✓ Нанесення шкоди герою</div>
+                        <div class="topic">✓ Створення UI: меню, індикатори, панелі</div>
+                        <div class="topic">✓ Завершальний проєкт: презентація власної гри (Space War, FPS-шутер)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-project">
+                <span>🎯 Фінальний проєкт після кожного модуля</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Чому обирають <span class="gradient-text">наш курс?</span></h2>
+                <p>Ігри — це не тільки розвага, а й перший крок у світ IT</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">220+</div>
+                    <div class="stat-label">Випускників</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">80%</div>
+                    <div class="stat-label">Задоволених учнів</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">4.3</div>
+                    <div class="stat-label">Рейтинг курсу</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">11/7</div>
+                    <div class="stat-label">Підтримка</div>
+                </div>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Розвиток логіки та мислення</h3>
+                    <p>Алгоритмічне й просторове мислення, креативність.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Програмування на C#</h3>
+                    <p>Практичні навички кодування та розуміння роботи алгоритмів.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>3D-моделювання та графіка</h3>
+                    <p>Робота з матеріалами, текстурами та об’єктами у просторі.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🕹</div>
+                    <h3>Створення власних ігор</h3>
+                    <p>Від простих рівнів до повноцінних ігрових проєктів.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Анімація та UI</h3>
+                    <p>Оживлення персонажів, створення інтерфейсів і меню.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Підготовка до майбутнього</h3>
+                    <p>Знайомство з GameDev і IT-професіями, перші кроки у кар’єрі.</p>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class="quote">"</div>
+                    <blockquote>
+                        Дійсно, вже бачу результат після 4 уроків, досить не погано школа 
+                        вчить дітей робити цікаві проєкти з якими потім можна робити ще
+                        багато цікавого, Дякую!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        Михайло Бийлов, тато учня
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Обери свій <span class="gradient-text">тарифний план</span></h2>
+                <p>Ми пропонуємо різні варіанти навчання, щоб кожна дитина могла знайти підходящий формат</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Базовий</h3>
+                        <div class="price">
+                            <span class="price-main">₴10999</span>
+                            <span class="price-old">₴13999</span>
+                        </div>
+                        <p class="duration">4 модулів</p>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span>24 відеоуроки</li>
+                        <li><span class="check">✓</span>Доступ до матеріалів на 6 місяців</li>
+                        <li><span class="check">✓</span>Практичні завдання</li>
+                        <li><span class="check">✓</span>Сертифікат про завершення</li>
+                        <li><span class="check">✓</span>Чат підтримки</li>
+                    </ul>
+                    <button class="btn btn-outline pricing-btn" onclick="scrollToSection('contact')">Обрати план</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card pricing-popular">
+                    <div class="popular-badge">⭐ Найпопулярніший</div>
+                    <div class="pricing-header">
+                        <h3>Преміум</h3>
+                        <div class="price">
+                            <span class="price-main">₴11999</span>
+                            <span class="price-old">₴14999</span>
+                        </div>
+                        <p class="duration">6 модулів + бонуси</p>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span>23 відеоуроки + бонусні матеріали</li>
+                        <li><span class="check">✓</span>Доступ до матеріалів на 1 рік</li>
+                        <li><span class="check">✓</span>Практичні завдання з перевіркою</li>
+                        <li><span class="check">✓</span>Персональний наставник</li>
+                        <li><span class="check">✓</span>Групові онлайн зустрічі</li>
+                        <li><span class="check">✓</span>Сертифікат про завершення</li>
+                        <li><span class="check">✓</span>Пріоритетна підтримка 24/7</li>
+                        <li><span class="check">✓</span>Доступ до спільноти ItEnAi</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn" onclick="scrollToSection('contact')">Обрати план</button>
+                </div>
+
+                <!-- VIP Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>VIP</h3>
+                        <div class="price">
+                            <span class="price-main">₴13999</span>
+                            <span class="price-old">₴15999</span>
+                        </div>
+                        <p class="duration">Індивідуальне навчання</p>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span>Індивідуальні уроки з викладачем</li>
+                        <li><span class="check">✓</span>Персоналізована програма</li>
+                        <li><span class="check">✓</span>Безлімітний доступ до матеріалів</li>
+                        <li><span class="check">✓</span>Миттєва підтримка викладача</li>
+                        <li><span class="check">✓</span>Додаткові проєкти та завдання</li>
+                        <li><span class="check">✓</span>Підготовка портфоліо</li>
+                        <li><span class="check">✓</span>Рекомендації для подальшого навчання</li>
+                        <li><span class="check">✓</span>Гарантія результату</li>
+                    </ul>
+                    <button class="btn btn-outline pricing-btn" onclick="scrollToSection('contact')">Обрати план</button>
+                </div>
+            </div>
+
+            <div class="discount-banner">
+                <span>💰 Знижка 25% до кінця місяця!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Записатися на <span class="gradient-text">курс</span></h2>
+                <p>Залиште заявку і наш менеджер зв'яжеться з вами для консультації</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3>Форма реєстрації</h3>
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label>Ім'я дитини *</label>
+                            <input type="text" name="name" placeholder="Введіть ім'я" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email батьків *</label>
+                            <input type="email" name="email" placeholder="example@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон *</label>
+                            <input type="tel" name="phone" placeholder="+380 (67) 123-45-67" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Вік дитини *</label>
+                            <input type="number" name="age" placeholder="9-18 років" min="9" max="18" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Тарифний план</label>
+                            <select name="plan">
+                                <option value="Базовий">Базовий - ₴10999</option>
+                                <option value="Преміум">Преміум - ₴11999</option>
+                                <option value="VIP">VIP - ₴13999</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Записатися на курс</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Контактна інформація</h3>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon contact-phone">📞</div>
+                            <div>
+                                <div class="contact-title">Телефон</div>
+                                <div class="contact-value">+380 (93) 14-80-343</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon contact-email">✉️</div>
+                            <div>
+                                <div class="contact-title">Email</div>
+                                <div class="contact-value">schoolitenai@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon contact-telegram">💬</div>
+                            <div>
+                                <div class="contact-title">Telegram</div>
+                                <div class="contact-value">@ItEnAi_School</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon contact-location">📍</div>
+                            <div>
+                                <div class="contact-title">Адреса</div>
+                                <div class="contact-value">м. Кременчук, вул. Полковника Гегечкорі ,б.29</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultation-card">
+                        <h4>🎯 Безкоштовна консультація</h4>
+                        <p>Не знаєте який план обрати? Замовте безкоштовну консультацію з нашим експертом!</p>
+                        <button class="btn btn-secondary">Замовити консультацію</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- School Info -->
+                <div class="footer-section footer-main">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <span>IT</span>
+                        </div>
+                        <div class="logo-text">
+                            <h3>ItEnAi</h3>
+                            <p>IT School</p>
+                        </div>
+                    </div>
+                    
+                    <p class="footer-description">
+                        Школа ItEnAi — провідний центр навчання дітей сучасним IT-технологіям. 
+                        Наш курс Unity 3D покаже як правильно створювати професійні проєкти.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🎥</a>
+                        <a href="mailto:info@itenai.com.ua" class="social-link">✉️</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Швидкі посилання</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Про курс</a></li>
+                        <li><a href="#modules">Модулі</a></li>
+                        <li><a href="#benefits">Переваги</a></li>
+                        <li><a href="#pricing">Ціни</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <div class="footer-contacts">
+                        <p>📞 +380 (93) 14-80-343</p>
+                        <p>✉️ schoolitenai@gmail.com</p>
+                        <p>📍 м. Кременчук, вул. Полковника Гегечкорі ,б.29</p>
+                        <p>🕒 Пн-Пт: 10:00-21:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 ItEnAi School. Всі права захищені.</p>
+                    <div class="footer-legal">
+                        <a href="#">Політика конфіденційності</a>
+                        <a href="#">Умови використання</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
