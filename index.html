@@ -372,8 +372,8 @@
                     <div class="pricing-header">
                         <h3>Базовий</h3>
                         <div class="price">
-                            <span class="price-main">₴10999</span>
-                            <span class="price-old">₴13999</span>
+                            <span class="price-main">₴4999</span>
+                            <span class="price-old">₴6999</span>
                         </div>
                         <p class="duration">4 модулів</p>
                     </div>
@@ -393,8 +393,8 @@
                     <div class="pricing-header">
                         <h3>Преміум</h3>
                         <div class="price">
-                            <span class="price-main">₴11999</span>
-                            <span class="price-old">₴14999</span>
+                            <span class="price-main">₴6999</span>
+                            <span class="price-old">₴8999</span>
                         </div>
                         <p class="duration">6 модулів + бонуси</p>
                     </div>
@@ -416,8 +416,8 @@
                     <div class="pricing-header">
                         <h3>VIP</h3>
                         <div class="price">
-                            <span class="price-main">₴13999</span>
-                            <span class="price-old">₴15999</span>
+                            <span class="price-main">₴8999</span>
+                            <span class="price-old">₴10999</span>
                         </div>
                         <p class="duration">Індивідуальне навчання</p>
                     </div>
@@ -453,7 +453,7 @@
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
                     <h3>Форма реєстрації</h3>
-                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/movnnpnq" method="POST">
                         <div class="form-group">
                             <label>Ім'я дитини *</label>
                             <input type="text" name="name" placeholder="Введіть ім'я" required>
@@ -473,12 +473,13 @@
                         <div class="form-group">
                             <label>Тарифний план</label>
                             <select name="plan">
-                                <option value="Базовий">Базовий - ₴10999</option>
-                                <option value="Преміум">Преміум - ₴11999</option>
-                                <option value="VIP">VIP - ₴13999</option>
+                                <option value="Базовий">Базовий - ₴4999</option>
+                                <option value="Преміум">Преміум - ₴6999</option>
+                                <option value="VIP">VIP - ₴8999</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">Записатися на курс</button>
+                         <p id="status" style="margin-top:10px; font-weight:bold;"></p>
                     </form>
                 </div>
 
@@ -549,10 +550,10 @@
                     </p>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">📷</a>
-                        <a href="#" class="social-link">🎥</a>
-                        <a href="mailto:info@itenai.com.ua" class="social-link">✉️</a>
+                        <a href="https://www.tiktok.com/@jonjonsonuk"  target="blank" class="social-link">📱</a>
+                        <a href="https://www.facebook.com/yuliia.platonova.2025"  target="blank" class="social-link">📷</a>
+                        <a href="https://www.instagram.com/laplandia.kids/"  target="blank" class="social-link">🎥</a>
+                        <a href="mailto:schoolitenai@gmail.com"  target="blank" class="social-link">✉️</a>
                     </div>
                 </div>
 
@@ -585,8 +586,7 @@
                 <div class="footer-bottom-content">
                     <p>&copy; 2025 ItEnAi School. Всі права захищені.</p>
                     <div class="footer-legal">
-                        <a href="#">Політика конфіденційності</a>
-                        <a href="#">Умови використання</a>
+                        <a href="./privacy.html">Політика конфіденційності</a>
                     </div>
                 </div>
             </div>
@@ -594,5 +594,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="./js/form.js"></script>
 </body>
 </html>
