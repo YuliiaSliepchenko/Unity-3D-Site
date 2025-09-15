@@ -104,12 +104,12 @@ body {
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 51px;
     background: linear-gradient(to right, #01b7ff, #e3f300);
     border-radius: 12px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: black;
     font-weight: bold;
@@ -306,7 +306,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(21, 255, 0, 0.25);
     object-fit: cover;
 }
 
@@ -328,6 +328,8 @@ body {
     height: 80px;
     background: linear-gradient(to right, #fbbf24, #f59e0b);
     font-size: 18px;
+    background: #000000;
+    border-radius: 15px;
 }
 
 .floating-users {
@@ -336,6 +338,7 @@ body {
     width: 64px;
     height: 64px;
     background: linear-gradient(to right, #10b981, #059669);
+    background: #04fd19;
     font-size: 24px;
 }
 
