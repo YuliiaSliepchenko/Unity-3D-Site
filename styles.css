@@ -326,9 +326,8 @@ body {
     right: -16px;
     width: 80px;
     height: 80px;
-    background: linear-gradient(to right, #fbbf24, #f59e0b);
     font-size: 18px;
-    background: #000000;
+    background: linear-gradient(to right, #01b7ff, #e3f300);
     border-radius: 15px;
 }
 .logos {
