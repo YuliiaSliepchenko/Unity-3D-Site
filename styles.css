@@ -298,38 +298,100 @@ body {
     color: #6b7280;
 }
 
+/* Контейнер блоку (праворуч) */
+.hero-right {
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* щоб картинка тягнулася вправо */
+}
+
+/* Контейнер зображення */
 .hero-image {
-    position: relative;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 640px; /* можна підлаштувати */
+  margin: 0;
+  border-radius: 16px;
 }
 
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgba(21, 255, 0, 0.25);
-    object-fit: cover;
+/* Внутрішній контейнер для обрізання картинки */
+.hero-image-inner {
+  overflow: hidden;
+  border-radius: 16px;
+  transition: box-shadow 0.6s ease;
+  padding: 0;
 }
 
+/* Зображення */
+.hero-image-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(21, 255, 0, 0.25);
+  transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Ефект наведення */
+.hero-image:hover .hero-image-inner img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 30px 60px -15px rgba(0, 255, 100, 0.35);
+}
+
+/* Плаваючі елементи (завжди поверх картинки) */
 .floating-element {
-    position: absolute;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Правий верхній елемент */
 .floating-3d {
-    top: -16px;
-    right: -16px;
-    width: 80px;
-    height: 80px;
-    font-size: 18px;
-    background: linear-gradient(to right, #01b7ff, #e3f300);
-    border-radius: 15px;
+  top: -16px;
+  right: -16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #01b7ff, #e3f300);
 }
+
+.floating-3d img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+/* Лівий нижній елемент */
+.floating-users {
+  bottom: -16px;
+  left: -16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #04fd19;
+  font-size: 24px;
+}
+
+/* --- Додатково для стабільності --- */
+
+/* Щоб не займало зайвого місця знизу */
+.hero-image img {
+  display: block;
+}
+
+/* Тінь для всього контейнера */
+.hero-image {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
 .logos {
     display: flex;
     align-items: center;
@@ -348,20 +410,12 @@ body {
     margin: 0;
     text-decoration: none;
 }
-.floating-users {
-    bottom: -16px;
-    left: -16px;
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(to right, #10b981, #059669);
-    background: #04fd19;
-    font-size: 24px;
-}
 
 /* Section Styles */
 .section-header {
     text-align: center;
     margin-bottom: 64px;
+    text-align: -webkit-center;
 }
 
 .section-header h2 {
@@ -369,6 +423,7 @@ body {
     font-weight: bold;
     color: #111827;
     margin-bottom: 16px;
+    text-align: -webkit-center;
 }
 
 .section-header p {
@@ -389,6 +444,25 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     margin-bottom: 64px;
+}
+/* >=1024px — рівно 3 колонки */
+@media (min-width: 1024px) {
+  .features-grid {
+    display: block;
+  }
+}
+
+/* >=1440px — останній елемент по центру, тільки коли він «самотній» (позиція 3n+1) */
+@media (min-width: 1440px) {
+  .features-grid {
+    display: block;
+  }
+
+  /* Центруємо ЛИШЕ якщо останній елемент припадає на першу колонку нового ряду
+     (тобто 4-й, 7-й, 10-й, ...) */
+  .features-grid > .feature-card:last-child:nth-child(3n+1) {
+    grid-column: 2; /* ставимо в середню колонку */
+  }
 }
 
 .feature-card {
@@ -419,6 +493,7 @@ body {
 .feature-card p {
     color: #6b7280;
     font-size: 14px;
+    text-align: -webkit-center;
 }
 
 .about-content {
@@ -426,6 +501,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
+    text-align: -webkit-center;
 }
 
 .about-left h3 {
@@ -462,12 +538,33 @@ body {
     margin-top: 2px;
 }
 
+.about-right {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
 .about-right img {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Ефект при наведенні */
+.about-right:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 30px 60px -15px rgba(0, 255, 100, 0.35);
+}
+
+/* Легкий ефект при натисканні */
+.about-right:active img {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
 
 /* Modules Section */
@@ -624,6 +721,7 @@ body {
 .benefit-icon {
     font-size: 48px;
     margin-bottom: 24px;
+    text-align: -webkit-center;
 }
 
 .benefit-card h3 {
@@ -631,37 +729,80 @@ body {
     font-weight: bold;
     color: #111827;
     margin-bottom: 12px;
+    text-align: -webkit-center;
 }
 
 .benefit-card p {
     color: #6b7280;
     line-height: 1.6;
+    text-align: -webkit-center;
 }
 
+.testimonials {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .testimonial {
     background: linear-gradient(to right, #01b7ff, #e3f300);
-    border-radius: 24px;
-    padding: 48px;
-    text-align: center;
-    color: black;
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+  color: black;
+  display: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  animation: fadeIn 0.8s ease;
+}
+
+.testimonial.active {
+  display: block;
 }
 
 .quote {
-    font-size: 96px;
-    opacity: 0.2;
-    line-height: 1;
-    margin-bottom: 16px;
+  font-size: 96px;
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 16px;
 }
 
 .testimonial blockquote {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    font-style: italic;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-style: italic;
 }
 
 .testimonial-author {
-    font-weight: 600;
+  font-weight: 600;
+}
+
+/* Навігаційні точки */
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Анімація плавної появи */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Pricing Section */
